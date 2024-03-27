@@ -12,5 +12,6 @@ lark==1.1.2
 cron-validator==1.0.6
 python-multipart
 sentry-sdk
+alembic==1.13.1
 
 git+https://github.com/Tracardi/tracardi.git@0.9.0-dev  # Change to 0.9.1-dev

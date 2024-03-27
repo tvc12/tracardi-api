@@ -1,5 +1,7 @@
 import os
 
+import alembic.config
+
 from collections import defaultdict
 from fastapi import APIRouter, Depends, HTTPException
 
@@ -149,4 +151,11 @@ async def get_migration_schemas(from_db_version: str, from_tenant_name: str = No
 @router.get("/migrations", tags=["migration"], include_in_schema=tracardi.expose_gui_api, response_model=list)
 async def get_migrations_for_current_version():
     return MigrationManager.get_available_migrations_for_version(tracardi.version)
+
+
+@router.post("/migration/mysql/upgrade", tags=["migration"], include_in_schema=tracardi.expose_gui_api)
+def run_mysql_migration_script():
+    os.chdir(os.path.realpath(f"{_local_path}/.."))
+    alembicArgs = ['--raiseerr', 'upgrade', 'head' ]
+    alembic.config.main(argv=alembicArgs)
 

@@ -1,5 +1,7 @@
 Generic single-database configuration with an async dbapi.
 
+CAUTION NEEDS tracardi library installed
+
 ```
 alembic current
 alembic revision --autogenerate -m "Create a baseline migrations"
