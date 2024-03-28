@@ -87,8 +87,7 @@ async def get_event_mapping_by_id(event_type_id: str):
     return record.map_to_object(map_to_event_mapping)
 
 
-@router.delete("/mapping/{event_type_id}", tags=["event-type"], include_in_schema=tracardi.expose_gui_api,
-               response_model=dict)
+@router.delete("/mapping/{event_type_id}", tags=["event-type"], include_in_schema=tracardi.expose_gui_api)
 async def del_event_type_metadata(event_type_id: str):
     """
     Deletes event type metadata for given event type
