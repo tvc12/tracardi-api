@@ -28,9 +28,10 @@ window.tracker.track("page-view",{});
 
 ## Forcing Profile ID
 
-In certain situations, you may want to send a specific profile ID to Tracardi that comes from your backend system. To
-enable this feature, static ID must be enabled in the event source that collects data, and the profile ID must be added
-to the script configuration.
+Sometimes, your backend system might need to send a unique Profile ID to Tracardi. This can happen when your backend system is
+working and needs to use that ID as the profile ID for Tracardi. This is helpful if your backend system already knows
+the profile ID and you want to share it with Tracardi. To do this, you need to turn on the option for a fixed ID in the
+data collection settings, and then add the profile ID into the tracking settings.
 
 Here's an example:
 
@@ -57,10 +58,12 @@ Here's an example:
 </script>
 ```
 
-It's important to note that this will send the provided profile ID regardless of whether a profile ID is already stored
-in the browser's local storage. If event source si not configured to allow static profile ID then System will try
-to load profile with provided ID - it will most probably fail and then it will generate the random ID. Please do
-not use this feature with events sources that has disabled static profile processing in events source. 
+!!! Notice 
+
+    It's important to note that this will send the provided profile ID regardless of whether a profile ID is already stored
+    in the browser's local storage. If event source si not configured to allow static profile ID then System will try
+    to load profile with provided ID - it will most probably fail and then it will generate the random ID. Please do
+    not use this feature with events sources that has disabled static profile processing in events source. 
 
 !!! Warning
 

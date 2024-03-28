@@ -254,7 +254,6 @@ application.mount("/uix",
 application.include_router(activation_endpoint.router)
 application.include_router(event_server_endpoint.router)
 application.include_router(tql_endpoint.router)
-# application.include_router(segments_endpoint.router)
 application.include_router(resource_endpoint.router)
 application.include_router(rule_endpoint.router)
 application.include_router(flow_endpoint.router)
