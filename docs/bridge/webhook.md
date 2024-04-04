@@ -1,6 +1,6 @@
 # Webhook bridge
 
-Webhook bridge is used to collect unstructured data iva API call from external system. It should be used to collect data
+Webhook bridge is used to collect unstructured data via API call from external system. It should be used to collect data
 from systems that we do not have control over the data structure that is sent. If you can structure the payload an api
 call then it is better to use REST API Bridge.
 
